@@ -1,1 +1,1 @@
-This is a repository for Computer Vision semester leading by Lsm.
+This is a repository for Computer Vision semester leading by Lsm from BJTU SE.
