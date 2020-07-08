@@ -64,20 +64,20 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach  items="${oldpersonlist}" var="item">
+                    <c:forEach  items="${oldpersonList}" var="item">
                         <tr>
-                            <td>${item.ID}</td>
+                            <td>${item.id}</td>
                             <td>${item.username}</td>
                             <td>${item.gender}</td>
                             <td>${item.phone}</td>
-                            <td>${item.id_card}</td>
+                            <td>${item.idCard}</td>
                             <td><fmt:formatDate value="${item.birthday}" dateStyle="medium" /></td>
-                            <td><fmt:formatDate value="${item.checkin_date}" dateStyle="medium" /></td>
-                            <td><fmt:formatDate value="${item.checkout_date}" dateStyle="medium" /></td>
-                            <td>${item.room_number}</td>
+                            <td><fmt:formatDate value="${item.checkinDate}" dateStyle="medium" /></td>
+                            <td><fmt:formatDate value="${item.checkoutDate}" dateStyle="medium" /></td>
+                            <td>${item.roomNumber}</td>
                             <td>
-                                <button class="btn btn-default btn-xs btn-info" onClick="location.href='${pageContext.request.contextPath}/oldperson/editOldperson?id=${item.ID}'">修改</button>
-                                <button class="btn btn-default btn-xs btn-danger btn-primary" onClick="location.href='${pageContext.request.contextPath}/oldperson/removeOldperson?id=${item.ID}'">删除</button>
+                                <button class="btn btn-default btn-xs btn-info" onClick="location.href='${pageContext.request.contextPath}/oldperson/editOldperson?id=${item.id}'">修改</button>
+                                <button class="btn btn-default btn-xs btn-danger btn-primary" onClick="location.href='${pageContext.request.contextPath}/oldperson/removeOldperson?id=${item.id}'">删除</button>
                                 <!--弹出框-->
                             </td>
                         </tr>
