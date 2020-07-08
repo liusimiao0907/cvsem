@@ -1,7 +1,13 @@
 <component name="ArtifactManager">
   <artifact type="war" name="cvsem:war">
-    <output-path>$PROJECT_DIR$/out/artifacts/cvsem_war</output-path>
-    <root id="archive" name="cvsem_war.war">
+    <output-path>$PROJECT_DIR$/../../../IDEandTools/Tomcat/apache-tomcat-9.0.30-windows-x64/apache-tomcat-9.0.30/webapps</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>cvsem</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="cvsem.war">
       <element id="artifact" artifact-name="cvsem:war exploded" />
     </root>
   </artifact>

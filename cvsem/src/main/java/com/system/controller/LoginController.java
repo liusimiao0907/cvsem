@@ -29,7 +29,7 @@ public class LoginController {
         //如果获取不到用户名就是登录失败，登录失败会直接抛出异常
         subject.login(token);
 
-        return "/login";  //改变默认页面
+        return "redirect:/oldperson/showOldperson";
     }
 
 }

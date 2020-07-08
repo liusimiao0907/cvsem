@@ -19,9 +19,5 @@
     @Component 是通用组件
     -->
     <context:component-scan base-package="com.system.service.impl"/>
-    <!--<bean id="studentService" class="com.system.service.impl.StudentServiceImpl"></bean>-->
-    <!--<bean id="teacherServiceImpl" class="com.system.service.impl.TeacherServiceImpl"></bean>-->
-    <!--<bean id="courseServiceImpl" class="com.system.service.impl.CourseServiceImpl"></bean>-->
-    <!--<bean id="SelectedCourseServiceImpl" class="com.system.service.impl.SelectedCourseServiceImpl"></bean>-->
 
 </beans>

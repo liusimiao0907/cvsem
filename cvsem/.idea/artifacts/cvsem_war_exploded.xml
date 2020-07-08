@@ -1,6 +1,13 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="cvsem:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/cvsem_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/../../../IDEandTools/Tomcat/apache-tomcat-9.0.30-windows-x64/apache-tomcat-9.0.30/webapps</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>cvsem</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -40,6 +47,9 @@
           <element id="library" level="project" name="Maven: org.jetbrains:annotations-java5:19.0.0" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-nop:1.7.2" />
         </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/cvsem/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="cvsem/web/Web" />
     </root>

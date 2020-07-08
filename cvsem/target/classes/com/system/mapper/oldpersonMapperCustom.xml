@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.system.mapper.oldpersonMapperCustom">
+    <select id="findByPaging" parameterType="PagingVO" resultType="oldpersonCustom">
+        select ID,username,gender,phone,id_card,birthday,checkin_date,checkout_date,room_number
+        from oldperson_info
+        limit #{toPageNo}, #{pageSize}
+    </select>
+</mapper>
