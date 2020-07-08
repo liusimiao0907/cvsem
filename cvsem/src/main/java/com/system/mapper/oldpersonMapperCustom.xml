@@ -2,8 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.system.mapper.oldpersonMapperCustom">
-    <select id="findByPaging" parameterType="PagingVO" resultType="oldpersonCustom">
-        select ID,username,gender,phone,id_card,birthday,checkin_date,checkout_date,room_number
+    <resultMap id="customMapResult" type="com.system.po.oldpersonCustom">
+        <id column="ID" property="id" jdbcType="INTEGER" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="gender" property="gender" jdbcType="CHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+        <result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
+        <result column="checkin_date" property="checkinDate" jdbcType="TIMESTAMP" />
+        <result column="checkout_date" property="checkoutDate" jdbcType="TIMESTAMP" />
+        <result column="room_number" property="roomNumber" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <select id="findByPaging" parameterType="PagingVO" resultType="com.system.po.oldpersonCustom" resultMap="customMapResult">
+        select ID as id,
+        username,
+        gender,
+        phone,
+        id_card as idCard,
+        birthday,
+        checkin_date as checkinDate,
+        checkout_date as checkoutDate,
+        room_number as roomNumber
         from oldperson_info
         limit #{toPageNo}, #{pageSize}
     </select>
