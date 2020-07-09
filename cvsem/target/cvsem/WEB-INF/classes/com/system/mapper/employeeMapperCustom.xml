@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.system.mapper.employeeMapperCustom">
+    <select id="findByPaging" parameterType="PagingVO" resultType="employeeCustom">
+        select ID,username,gender,phone,id_card,birthday,hire_date,resign_date,description
+        from employee_info
+        limit #{toPageNo}, #{pageSize}
+    </select>
+</mapper>
