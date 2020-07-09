@@ -25,7 +25,7 @@
 				<div class="panel panel-default">
 				    <div class="panel-heading">
 						<div class="row">
-					    	<h1 style="text-align: center;">添加老人信息</h1>
+					    	<h1 style="text-align: center;">添加学生信息</h1>
 						</div>
 				    </div>
 				    <div class="panel-body">
@@ -105,6 +105,6 @@
 	</div>
 </body>
 	<script type="text/javascript">
-		$("#nav li:nth-child(1)").addClass("active")
+		$("#nav li:nth-child(2)").addClass("active")
 	</script>
 </html>

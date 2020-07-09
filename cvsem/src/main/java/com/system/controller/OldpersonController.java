@@ -35,7 +35,7 @@ public class OldpersonController {
             list = oldpersonService.findByPaging(page);
         }
 
-        model.addAttribute("oldpersonlist", list);
+        model.addAttribute("oldpersonList", list);
         model.addAttribute("pagingVO", pagingVO);
 
         return "oldperson/showOldperson";
@@ -105,7 +105,7 @@ public class OldpersonController {
 
         List<oldperson> list = oldpersonService.findByName(findByName);
 
-        model.addAttribute("oldpersonlist", list);
+        model.addAttribute("oldpersonList", list);
         return "oldperson/showOldperson";
     }
 }
