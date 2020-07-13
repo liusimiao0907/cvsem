@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>工作人员信息管理</title>
+    <title>用户信息管理</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 引入bootstrap -->
@@ -25,24 +25,24 @@
 </head>
 <body>
 <!-- 顶栏 -->
-<jsp:include page="../employee/top.jsp"></jsp:include>
+<jsp:include page="../user/top.jsp"></jsp:include>
 <!-- 中间主体 -->
 <div class="container" id="content">
     <div class="row">
-        <jsp:include page="../employee/menu.jsp"></jsp:include>
+        <jsp:include page="../user/menu.jsp"></jsp:include>
         <div class="col-md-10">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="row">
-                        <h1 class="col-md-5">工作人员管理</h1>
-                        <form class="bs-example bs-example-form col-md-5" role="form" style="margin: 20px 0 10px 0;" action="${pageContext.request.contextPath}/employee/selectEmployee" id="form1" method="post">
+                        <h1 class="col-md-5">用户管理</h1>
+                        <form class="bs-example bs-example-form col-md-5" role="form" style="margin: 20px 0 10px 0;" action="${pageContext.request.contextPath}/user/selectUser" id="form1" method="post">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="请输入姓名" name="findByName">
                                 <span class="input-group-addon btn" id="sub">搜索</span>
                             </div>
                         </form>
-                        <button class="btn btn-default col-md-2" style="margin-top: 20px" onClick="location.href='${pageContext.request.contextPath}/employee/addEmployee'">
-                            添加工作人员信息
+                        <button class="btn btn-default col-md-2" style="margin-top: 20px" onClick="location.href='${pageContext.request.contextPath}/user/addUser'">
+                            添加用户信息
                             <sapn class="glyphicon glyphicon-plus"/>
                         </button>
 
@@ -52,31 +52,29 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>姓名</th>
+                        <th>用户名</th>
+                        <th>密码</th>
+                        <th>真实姓名</th>
                         <th>性别</th>
-                        <th>手机号</th>
-                        <th>身份证号</th>
-                        <th>出生日期</th>
-                        <th>入职时间</th>
-                        <th>注册时间</th>
-                        <th>描述</th>
+                        <th>邮箱</th>
+                        <th>电话</th>
+                        <th>移动电话</th>
                         <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach  items="${employeelist}" var="item">
+                    <c:forEach  items="${userlist}" var="item">
                         <tr>
                             <td>${item.ID}</td>
                             <td>${item.username}</td>
-                            <td>${item.gender}</td>
+                            <td>${item.password}</td>
+                            <td>${item.realName}</td>
+                            <td>${item.sex}</td>
+                            <td>${item.email}</td>
                             <td>${item.phone}</td>
-                            <td>${item.id_card}</td>
-                            <td><fmt:formatDate value="${item.birthday}" dateStyle="medium" /></td>
-                            <td><fmt:formatDate value="${item.hire_date}" dateStyle="medium" /></td>
-                            <td><fmt:formatDate value="${item.resign_date}" dateStyle="medium" /></td>
-                            <td>${item.description}</td>
+                            <td>${item.mobile}</td>
                             <td>
-                                <button class="btn btn-default btn-xs btn-info" onClick="location.href='${pageContext.request.contextPath}/employee/editEmployee?id=${item.ID}'">修改</button>
+                                <button class="btn btn-default btn-xs btn-info" onClick="location.href='${pageContext.request.contextPath}/user/editUser?id=${item.ID}'">修改</button>
                                 <button class="btn btn-default btn-xs btn-danger btn-primary" onClick="confirmd(${item.ID})">删除</button>
                                 <!--弹出框-->
                             </td>
@@ -88,21 +86,21 @@
                     <c:if test="${pagingVO != null}">
                         <nav style="text-align: center">
                             <ul class="pagination">
-                                <li><a href="${pageContext.request.contextPath}/employee/showEmployee?page=${pagingVO.upPageNo}">&laquo;上一页</a></li>
+                                <li><a href="${pageContext.request.contextPath}/user/showUser?page=${pagingVO.upPageNo}">&laquo;上一页</a></li>
                                 <li class="active"><a href="">${pagingVO.curentPageNo}</a></li>
                                 <c:if test="${pagingVO.curentPageNo+1 <= pagingVO.totalCount}">
-                                    <li><a href="${pageContext.request.contextPath}/employee/showEmployee?page=${pagingVO.curentPageNo+1}">${pagingVO.curentPageNo+1}</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/user/showUser?page=${pagingVO.curentPageNo+1}">${pagingVO.curentPageNo+1}</a></li>
                                 </c:if>
                                 <c:if test="${pagingVO.curentPageNo+2 <= pagingVO.totalCount}">
-                                    <li><a href="${pageContext.request.contextPath}/employee/showEmployee?page=${pagingVO.curentPageNo+2}">${pagingVO.curentPageNo+2}</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/user/showUser?page=${pagingVO.curentPageNo+2}">${pagingVO.curentPageNo+2}</a></li>
                                 </c:if>
                                 <c:if test="${pagingVO.curentPageNo+3 <= pagingVO.totalCount}">
-                                    <li><a href="${pageContext.request.contextPath}/employee/showEmployee?page=${pagingVO.curentPageNo+3}">${pagingVO.curentPageNo+3}</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/user/showUser?page=${pagingVO.curentPageNo+3}">${pagingVO.curentPageNo+3}</a></li>
                                 </c:if>
                                 <c:if test="${pagingVO.curentPageNo+4 <= pagingVO.totalCount}">
-                                    <li><a href="${pageContext.request.contextPath}/employee/showEmployee?page=${pagingVO.curentPageNo+4}">${pagingVO.curentPageNo+4}</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/user/showUser?page=${pagingVO.curentPageNo+4}">${pagingVO.curentPageNo+4}</a></li>
                                 </c:if>
-                                <li><a href="${pageContext.request.contextPath}/employee/showEmployee?page=${pagingVO.totalCount}">最后一页&raquo;</a></li>
+                                <li><a href="${pageContext.request.contextPath}/user/showUser?page=${pagingVO.totalCount}">最后一页&raquo;</a></li>
                             </ul>
                         </nav>
                     </c:if>
@@ -119,12 +117,12 @@
 </div>
 </body>
 <script type="text/javascript">
-    $("#nav li:nth-child(3)").addClass("active");
+    $("#nav li:nth-child(5)").addClass("active");
 
     function confirmd(id) {
         var msg = "您真的确定要删除吗？！";
         if (confirm(msg)==true){
-            location.href='${pageContext.request.contextPath}/employee/removeEmployee?id='+id;
+            location.href='${pageContext.request.contextPath}/user/removeUser?id='+id;
         }
     };
 

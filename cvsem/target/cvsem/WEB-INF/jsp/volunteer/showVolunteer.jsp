@@ -77,7 +77,7 @@
                             <td>${item.description}</td>
                             <td>
                                 <button class="btn btn-default btn-xs btn-info" onClick="location.href='${pageContext.request.contextPath}/volunteer/editVolunteer?id=${item.ID}'">修改</button>
-                                <button class="btn btn-default btn-xs btn-danger btn-primary" onClick="location.href='${pageContext.request.contextPath}/volunteer/removeVolunteer?id=${item.ID}'">删除</button>
+                                <button class="btn btn-default btn-xs btn-danger btn-primary" onClick="confirmd(${item.ID})">删除</button>
                                 <!--弹出框-->
                             </td>
                         </tr>
@@ -121,12 +121,10 @@
 <script type="text/javascript">
     $("#nav li:nth-child(2)").addClass("active");
 
-    function confirmd() {
+    function confirmd(id) {
         var msg = "您真的确定要删除吗？！";
         if (confirm(msg)==true){
-            return true;
-        }else{
-            return false;
+            location.href='${pageContext.request.contextPath}/volunteer/removeVolunteer?id='+id;
         }
     };
 
