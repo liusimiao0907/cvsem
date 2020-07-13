@@ -3,21 +3,21 @@ package com.system.po;
 import java.util.Date;
 
 public class oldpersonCustom {
-    private Integer id;
+    private Integer ID;
     private String username;
     private String gender;
     private String phone;
-    private String idCard;
+    private String id_card;
     private Date birthday;
-    private Date checkinDate;
-    private Date checkoutDate;
-    private String roomNumber;
+    private Date checkin_date;
+    private Date checkout_date;
+    private String room_number;
 
-    public Integer getId() {
-        return id;
+    public Integer getID() {
+        return ID;
     }
-    public void setId(Integer id) {
-        this.id = id;
+    public void setID(Integer id) {
+        this.ID = id;
     }
     public String getUsername() {
         return username;
@@ -37,11 +37,11 @@ public class oldpersonCustom {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public String getIdCard() {
-        return idCard;
+    public String getId_card() {
+        return id_card;
     }
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
+    public void setId_card(String idCard) {
+        this.id_card = idCard;
     }
     public Date getBirthday() {
         return birthday;
@@ -49,22 +49,22 @@ public class oldpersonCustom {
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
-    public Date getCheckinDate() {
-        return checkinDate;
+    public Date getCheckin_date() {
+        return checkin_date;
     }
-    public void setCheckinDate(Date checkinDate) {
-        this.checkinDate = checkinDate;
+    public void setCheckin_date(Date checkinDate) {
+        this.checkin_date = checkinDate;
     }
-    public Date getCheckoutDate() {
-        return checkoutDate;
+    public Date getCheckout_date() {
+        return checkout_date;
     }
-    public void setCheckoutDate(Date checkoutDate) {
-        this.checkoutDate = checkoutDate;
+    public void setCheckout_date(Date checkoutDate) {
+        this.checkout_date = checkoutDate;
     }
-    public String getRoomNumber() {
-        return roomNumber;
+    public String getRoom_number() {
+        return room_number;
     }
-    public void setRoomNumber(String roomNumber) {
-        this.roomNumber = roomNumber;
+    public void setRoom_number(String roomNumber) {
+        this.room_number = roomNumber;
     }
 }
